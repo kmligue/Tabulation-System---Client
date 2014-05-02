@@ -1,0 +1,12 @@
+E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation System - Client\bin\Debug\Tabulation System - Client.exe.config
+E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation System - Client\bin\Debug\Tabulation System - Client.exe
+E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation System - Client\bin\Debug\Tabulation System - Client.pdb
+E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation System - Client\bin\Debug\Tabulation System - Client.xml
+E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation System - Client\obj\Debug\Tabulation_System___Client.Resources.resources
+E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation System - Client\obj\Debug\Tabulation System - Client.vbproj.GenerateResource.Cache
+E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation System - Client\obj\Debug\Tabulation System - Client.exe
+E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation System - Client\obj\Debug\Tabulation System - Client.xml
+E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation System - Client\obj\Debug\Tabulation System - Client.pdb
+E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation System - Client\obj\Debug\Tabulation System - Client.vbprojResolveAssemblyReference.cache
+E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation System - Client\obj\Debug\Tabulation_System___Client.Main.resources
+E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation System - Client\obj\Debug\Tabulation_System___Client.Login.resources
