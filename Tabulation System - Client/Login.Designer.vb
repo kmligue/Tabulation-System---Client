@@ -84,7 +84,7 @@ Partial Class Login
         Me.btn_login.Text = "Login"
         Me.btn_login.UseVisualStyleBackColor = False
         '
-        'Form1
+        'Login
         '
         Me.AcceptButton = Me.btn_login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -98,7 +98,7 @@ Partial Class Login
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Form1"
+        Me.Name = "Login"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"

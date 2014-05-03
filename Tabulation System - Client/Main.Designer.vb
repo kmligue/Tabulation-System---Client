@@ -22,26 +22,27 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.lbl_judge_username = New System.Windows.Forms.Label()
+        Me.lbl_judge_id = New System.Windows.Forms.Label()
         Me.pb_gown = New System.Windows.Forms.PictureBox()
         Me.pb_interview = New System.Windows.Forms.PictureBox()
         Me.pb_swimwear = New System.Windows.Forms.PictureBox()
         Me.pb_talent = New System.Windows.Forms.PictureBox()
+        Me.lbl_event_id = New System.Windows.Forms.Label()
         CType(Me.pb_gown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_interview, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_swimwear, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_talent, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'lbl_judge_username
+        'lbl_judge_id
         '
-        Me.lbl_judge_username.AutoSize = True
-        Me.lbl_judge_username.Location = New System.Drawing.Point(850, 20)
-        Me.lbl_judge_username.Name = "lbl_judge_username"
-        Me.lbl_judge_username.Size = New System.Drawing.Size(39, 13)
-        Me.lbl_judge_username.TabIndex = 0
-        Me.lbl_judge_username.Text = "Label1"
-        Me.lbl_judge_username.Visible = False
+        Me.lbl_judge_id.AutoSize = True
+        Me.lbl_judge_id.Location = New System.Drawing.Point(850, 20)
+        Me.lbl_judge_id.Name = "lbl_judge_id"
+        Me.lbl_judge_id.Size = New System.Drawing.Size(44, 13)
+        Me.lbl_judge_id.TabIndex = 0
+        Me.lbl_judge_id.Text = "judge id"
+        Me.lbl_judge_id.Visible = False
         '
         'pb_gown
         '
@@ -91,6 +92,16 @@ Partial Class Main
         Me.pb_talent.TabIndex = 1
         Me.pb_talent.TabStop = False
         '
+        'lbl_event_id
+        '
+        Me.lbl_event_id.AutoSize = True
+        Me.lbl_event_id.Location = New System.Drawing.Point(697, 20)
+        Me.lbl_event_id.Name = "lbl_event_id"
+        Me.lbl_event_id.Size = New System.Drawing.Size(45, 13)
+        Me.lbl_event_id.TabIndex = 2
+        Me.lbl_event_id.Text = "event id"
+        Me.lbl_event_id.Visible = False
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -98,11 +109,12 @@ Partial Class Main
         Me.BackgroundImage = Global.Tabulation_System___Client.My.Resources.Resources.background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1024, 768)
+        Me.Controls.Add(Me.lbl_event_id)
         Me.Controls.Add(Me.pb_swimwear)
         Me.Controls.Add(Me.pb_talent)
         Me.Controls.Add(Me.pb_interview)
         Me.Controls.Add(Me.pb_gown)
-        Me.Controls.Add(Me.lbl_judge_username)
+        Me.Controls.Add(Me.lbl_judge_id)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Main"
         Me.ShowIcon = False
@@ -116,9 +128,10 @@ Partial Class Main
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents lbl_judge_username As System.Windows.Forms.Label
+    Friend WithEvents lbl_judge_id As System.Windows.Forms.Label
     Friend WithEvents pb_gown As System.Windows.Forms.PictureBox
     Friend WithEvents pb_interview As System.Windows.Forms.PictureBox
     Friend WithEvents pb_swimwear As System.Windows.Forms.PictureBox
     Friend WithEvents pb_talent As System.Windows.Forms.PictureBox
+    Friend WithEvents lbl_event_id As System.Windows.Forms.Label
 End Class

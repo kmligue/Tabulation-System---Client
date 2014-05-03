@@ -38,6 +38,13 @@ Public Class CandidateList1
 
         pb_main.BackgroundImage = Image.FromFile(Application.StartupPath & "\Images\" & ListView.SelectedItems(0).Text & ".jpg")
 
+        Dim score As Double = getScore(Functions.getId("SELECT id FROM t_candidate WHERE name = '" & ListView.SelectedItems(0).Text & "'"), "t_" & lbl_event.Text)
+
+        ' get score if available
+        If Not score = 0.0 Then
+            txt_score.Text = score
+        End If
+
     End Sub
 
     Private Sub ListView_Click(sender As Object, e As EventArgs) Handles ListView.Click
@@ -45,6 +52,16 @@ Public Class CandidateList1
     End Sub
 
     Private Sub btn_next_Click(sender As Object, e As EventArgs) Handles btn_next.Click
+
+        ' checks if score is inputted
+        If Not txt_score.Text = "" Then
+            ' save inputted score
+            Dim candidateId As Integer = Functions.getId("SELECT id FROM t_candidate WHERE name = '" & ListView.SelectedItems(0).Text & "'")
+
+            inputScore(txt_score.Text, candidateId, "t_" & lbl_event.Text.ToLower)
+            txt_score.Text = ""
+        End If
+
         count += 1
 
         If count >= ListView.Items.Count Then
@@ -53,17 +70,35 @@ Public Class CandidateList1
             ListView.Items(count - 1).Selected = False
             ListView.Items(count).Selected = True
             ListView.Select()
-            Exit Sub
+        Else
+            ListView.Items(count - 1).Selected = False
+            ListView.Items(count).Selected = True
+            ListView.Select()
         End If
 
-        ListView.Items(count - 1).Selected = False
-        ListView.Items(count).Selected = True
-        ListView.Select()
+
 
         pb_main.BackgroundImage = Image.FromFile(Application.StartupPath & "\Images\" & ListView.SelectedItems(0).Text & ".jpg")
+
+        Dim score As Double = getScore(Functions.getId("SELECT id FROM t_candidate WHERE name = '" & ListView.SelectedItems(0).Text & "'"), "t_" & lbl_event.Text.ToLower)
+
+        ' get score if available
+        If Not score = 0.0 Then
+            txt_score.Text = score
+        End If
     End Sub
 
     Private Sub btn_prev_Click(sender As Object, e As EventArgs) Handles btn_prev.Click
+
+        ' checks if score is inputted
+        If Not txt_score.Text = "" Then
+            ' save inputted score
+            Dim candidateId As Integer = Functions.getId("SELECT id FROM t_candidate WHERE name = '" & ListView.SelectedItems(0).Text & "'")
+
+            inputScore(txt_score.Text, candidateId, "t_" & lbl_event.Text.ToLower)
+            txt_score.Text = ""
+        End If
+
         count -= 1
 
         If count < 0 Then
@@ -72,13 +107,78 @@ Public Class CandidateList1
             ListView.Items(count + 1).Selected = False
             ListView.Items(count).Selected = True
             ListView.Select()
-            Exit Sub
+        Else
+            ListView.Items(count + 1).Selected = False
+            ListView.Items(count).Selected = True
+            ListView.Select()
         End If
 
-        ListView.Items(count + 1).Selected = False
-        ListView.Items(count).Selected = True
-        ListView.Select()
+
 
         pb_main.BackgroundImage = Image.FromFile(Application.StartupPath & "\Images\" & ListView.SelectedItems(0).Text & ".jpg")
+
+        Dim score As Double = getScore(Functions.getId("SELECT id FROM t_candidate WHERE name = '" & ListView.SelectedItems(0).Text & "'"), "t_" & lbl_event.Text.ToLower)
+
+        ' get score if available
+        If Not score = 0.0 Then
+            txt_score.Text = score
+        End If
+    End Sub
+
+    Private Sub CandidateList1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Main.Show()
+        Me.Hide()
+    End Sub
+
+    Private Function getScore(ByVal candidateId As Integer, ByVal table As String) As Double
+        Dim score As Double = 0.0
+        Dim sql As String = "SELECT score FROM " & table & " WHERE candidate_id = '" & candidateId & "' AND judge_id = '" & Main.lbl_judge_id.Text & "'"
+
+        Try
+            Connect.constring.Open()
+            Functions.com.Connection = Connect.constring
+            Functions.com.CommandText = sql
+            Functions.reader = Functions.com.ExecuteReader
+
+            While reader.Read
+                If reader.HasRows Then
+                    score = Format(reader(0), "0.00")
+                End If
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            Connect.constring.Close()
+        End Try
+
+        Return score
+    End Function
+
+    Private Sub inputScore(ByVal score As String, ByVal candidateId As Integer, ByVal table As String)
+        Dim sql As String
+
+        If Functions.isExist("SELECT * FROM " & table & " WHERE candidate_id = '" & candidateId & "' AND judge_id = '" & Main.lbl_judge_id.Text & "'") = True Then
+            sql = "UPDATE " & table & " SET score = '" & score & "' WHERE candidate_id = '" & candidateId & "' AND judge_id = '" & Main.lbl_judge_id.Text & "'"
+        Else
+            sql = "INSERT INTO " & table & "(judge_id, event_id, candidate_id, score) VALUES('" & Main.lbl_judge_id.Text & "', '" & Main.lbl_event_id.Text & "', '" & candidateId & "', '" & score & "')"
+        End If
+
+        Try
+            Connect.constring.Open()
+            Functions.com.Connection = Connect.constring
+            Functions.com.CommandText = sql
+            Functions.com.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            Connect.constring.Close()
+        End Try
+    End Sub
+
+    Private Sub txt_score_KeyUp(sender As Object, e As KeyEventArgs) Handles txt_score.KeyUp
+        If Not IsNumeric(txt_score.Text) Or Val(txt_score.Text) > 10 Then
+            MsgBox("Error")
+            txt_score.Text = ""
+        End If
     End Sub
 End Class

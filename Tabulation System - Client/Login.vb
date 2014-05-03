@@ -42,7 +42,7 @@
             End Try
 
             Me.Hide()
-            Main.lbl_judge_username.Text = txt_username.Text
+            Main.lbl_judge_id.Text = Functions.getId("SELECT id FROM t_judge WHERE username = '" & txt_username.Text & "'")
             Main.Show()
         Else
             MsgBox("User not found!")
@@ -74,4 +74,8 @@
 
         Return isLogin
     End Function
+
+    Private Sub Login_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Connect.constring.Close()
+    End Sub
 End Class

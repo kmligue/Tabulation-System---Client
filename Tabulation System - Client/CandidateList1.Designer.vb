@@ -25,12 +25,13 @@ Partial Class CandidateList1
         Me.components = New System.ComponentModel.Container()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txt_score = New System.Windows.Forms.TextBox()
         Me.ListView = New System.Windows.Forms.ListView()
         Me.ImageList = New System.Windows.Forms.ImageList(Me.components)
         Me.pb_main = New System.Windows.Forms.PictureBox()
         Me.btn_prev = New System.Windows.Forms.Button()
         Me.btn_next = New System.Windows.Forms.Button()
+        Me.lbl_event = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_main, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,16 +60,16 @@ Partial Class CandidateList1
         Me.PictureBox2.TabIndex = 1
         Me.PictureBox2.TabStop = False
         '
-        'TextBox1
+        'txt_score
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.White
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 47.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(440, 538)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(131, 72)
-        Me.TextBox1.TabIndex = 2
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_score.BackColor = System.Drawing.Color.White
+        Me.txt_score.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txt_score.Font = New System.Drawing.Font("Microsoft Sans Serif", 47.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_score.Location = New System.Drawing.Point(440, 538)
+        Me.txt_score.Name = "txt_score"
+        Me.txt_score.Size = New System.Drawing.Size(131, 72)
+        Me.txt_score.TabIndex = 2
+        Me.txt_score.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ListView
         '
@@ -125,6 +126,18 @@ Partial Class CandidateList1
         Me.btn_next.TabIndex = 5
         Me.btn_next.UseVisualStyleBackColor = True
         '
+        'lbl_event
+        '
+        Me.lbl_event.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_event.Font = New System.Drawing.Font("Vladimir Script", 38.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_event.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lbl_event.Location = New System.Drawing.Point(355, 699)
+        Me.lbl_event.Name = "lbl_event"
+        Me.lbl_event.Size = New System.Drawing.Size(303, 63)
+        Me.lbl_event.TabIndex = 6
+        Me.lbl_event.Text = "Gown"
+        Me.lbl_event.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'CandidateList1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -132,11 +145,12 @@ Partial Class CandidateList1
         Me.BackgroundImage = Global.Tabulation_System___Client.My.Resources.Resources.background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1024, 768)
+        Me.Controls.Add(Me.lbl_event)
         Me.Controls.Add(Me.btn_next)
         Me.Controls.Add(Me.btn_prev)
         Me.Controls.Add(Me.pb_main)
         Me.Controls.Add(Me.ListView)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txt_score)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -153,10 +167,11 @@ Partial Class CandidateList1
     End Sub
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txt_score As System.Windows.Forms.TextBox
     Friend WithEvents ListView As System.Windows.Forms.ListView
     Friend WithEvents ImageList As System.Windows.Forms.ImageList
     Friend WithEvents pb_main As System.Windows.Forms.PictureBox
     Friend WithEvents btn_prev As System.Windows.Forms.Button
     Friend WithEvents btn_next As System.Windows.Forms.Button
+    Friend WithEvents lbl_event As System.Windows.Forms.Label
 End Class

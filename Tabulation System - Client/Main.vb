@@ -1,22 +1,5 @@
 ﻿Public Class Main
 
-    Private Sub Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Dim sql As String = "UPDATE t_judge SET status = 0 WHERE username = '" & lbl_judge_username.Text & "'"
-
-        Try
-            Connect.constring.Open()
-            Functions.com.Connection = Connect.constring
-            Functions.com.CommandText = sql
-            Functions.com.ExecuteNonQuery()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            Connect.constring.Close()
-        End Try
-
-        Login.Show()
-    End Sub
-
     Private Sub pb_gown_MouseHover(sender As Object, e As EventArgs) Handles pb_gown.MouseHover
         pb_gown.BackgroundImage = CType(My.Resources.ResourceManager.GetObject("gown_hover"), Image)
     End Sub
@@ -50,6 +33,67 @@
     End Sub
 
     Private Sub pb_gown_Click(sender As Object, e As EventArgs) Handles pb_gown.Click
-        CandidateList1.Show()
+        If isEnabled("Gown") = True Then
+            lbl_event_id.Text = Functions.getId("SELECT id FROM t_event WHERE name = 'gown'")
+            CandidateList1.lbl_event.Text = "Gown"
+            CandidateList1.Show()
+            Me.Hide()
+        Else
+            ScoreList.Text = "Gown"
+            ScoreList.Show()
+        End If
+
+    End Sub
+
+    Private Sub pb_interview_Click(sender As Object, e As EventArgs) Handles pb_interview.Click
+        If isEnabled("Interview") = True Then
+            lbl_event_id.Text = Functions.getId("SELECT id FROM t_event WHERE name = 'interview'")
+            CandidateList1.lbl_event.Text = "Interview"
+            CandidateList1.Show()
+            Me.Hide()
+        Else
+            ScoreList.Text = "Interview"
+            ScoreList.Show()
+        End If
+    End Sub
+
+    Private Sub pb_swimwear_Click(sender As Object, e As EventArgs) Handles pb_swimwear.Click
+        If isEnabled("Swimwear") = True Then
+            lbl_event_id.Text = Functions.getId("SELECT id FROM t_event WHERE name = 'swimwear'")
+            CandidateList1.lbl_event.Text = "Swimwear"
+            CandidateList1.Show()
+            Me.Hide()
+        Else
+            ScoreList.Text = "Swimwear"
+            ScoreList.Show()
+        End If
+    End Sub
+
+    Private Sub pb_talent_Click(sender As Object, e As EventArgs) Handles pb_talent.Click
+        If isEnabled("Talent") = True Then
+            lbl_event_id.Text = Functions.getId("SELECT id FROM t_event WHERE name = 'talent'")
+            CandidateList1.lbl_event.Text = "Talent"
+            CandidateList1.Show()
+            Me.Hide()
+        Else
+            ScoreList.Text = "Talent"
+            ScoreList.Show()
+        End If
+    End Sub
+
+    Private Sub Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Dim sql As String = "UPDATE t_judge SET status = 0 WHERE id = '" & lbl_judge_id.Text & "'"
+
+        Try
+            Connect.constring.Open()
+            Functions.com.Connection = Connect.constring
+            Functions.com.CommandText = sql
+            Functions.com.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            Connect.constring.Close()
+            Login.Show()
+        End Try
     End Sub
 End Class
