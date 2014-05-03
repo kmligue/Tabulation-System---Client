@@ -73,6 +73,26 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property btn_next() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("btn_next", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property btn_prev() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("btn_prev", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property frame() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("frame", resourceCulture)
@@ -116,6 +136,16 @@ Namespace My.Resources
         Friend ReadOnly Property interview_hover() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("interview_hover", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property listview_background() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("listview_background", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

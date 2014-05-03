@@ -19,6 +19,14 @@ TabulationSystem-Client
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Tabulation_System___Client.My.Resources.Resources.btn_next">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Tabulation_System___Client.My.Resources.Resources.btn_prev">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Tabulation_System___Client.My.Resources.Resources.frame">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -36,6 +44,10 @@ TabulationSystem-Client
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:Tabulation_System___Client.My.Resources.Resources.interview_hover">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Tabulation_System___Client.My.Resources.Resources.listview_background">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
