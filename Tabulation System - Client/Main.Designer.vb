@@ -49,7 +49,6 @@ Partial Class Main
         Me.pb_gown.BackgroundImage = Global.Tabulation_System___Client.My.Resources.Resources.gown
         Me.pb_gown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pb_gown.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_gown.Enabled = False
         Me.pb_gown.Location = New System.Drawing.Point(434, 63)
         Me.pb_gown.Name = "pb_gown"
         Me.pb_gown.Size = New System.Drawing.Size(222, 326)

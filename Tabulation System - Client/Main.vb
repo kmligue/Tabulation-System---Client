@@ -48,4 +48,8 @@
     Private Sub pb_talent_MouseLeave(sender As Object, e As EventArgs) Handles pb_talent.MouseLeave
         pb_talent.BackgroundImage = CType(My.Resources.ResourceManager.GetObject("talent"), Image)
     End Sub
+
+    Private Sub pb_gown_Click(sender As Object, e As EventArgs) Handles pb_gown.Click
+        CandidateList1.Show()
+    End Sub
 End Class
