@@ -38,7 +38,7 @@ Public Class CandidateList1
 
         pb_main.BackgroundImage = Image.FromFile(Application.StartupPath & "\Images\" & ListView.SelectedItems(0).Text & ".jpg")
 
-        Dim score As Double = getScore(Functions.getId("SELECT id FROM t_candidate WHERE name = '" & ListView.SelectedItems(0).Text & "'"), "t_" & lbl_event.Text)
+        Dim score As Double = Functions.getScore(Functions.getId("SELECT id FROM t_candidate WHERE name = '" & ListView.SelectedItems(0).Text & "'"), "t_" & lbl_event.Text)
 
         ' get score if available
         If Not score = 0.0 Then
@@ -49,6 +49,15 @@ Public Class CandidateList1
 
     Private Sub ListView_Click(sender As Object, e As EventArgs) Handles ListView.Click
         pb_main.BackgroundImage = Image.FromFile(Application.StartupPath & "\Images\" & ListView.SelectedItems(0).Text & ".jpg")
+
+        count = ListView.SelectedItems(0).Index
+
+        Dim score As Double = Functions.getScore(Functions.getId("SELECT id FROM t_candidate WHERE name = '" & ListView.SelectedItems(0).Text & "'"), "t_" & lbl_event.Text)
+
+        ' get score if available
+        If Not score = 0.0 Then
+            txt_score.Text = score
+        End If
     End Sub
 
     Private Sub btn_next_Click(sender As Object, e As EventArgs) Handles btn_next.Click
@@ -56,7 +65,7 @@ Public Class CandidateList1
         ' checks if score is inputted
         If Not txt_score.Text = "" Then
             ' save inputted score
-            Dim candidateId As Integer = Functions.getId("SELECT id FROM t_candidate WHERE name = '" & ListView.SelectedItems(0).Text & "'")
+            Dim candidateId As Integer = Functions.getId("SELECT id FROM t_candidate WHERE name = '" & ListView.Items(count).Text & "'")
 
             inputScore(txt_score.Text, candidateId, "t_" & lbl_event.Text.ToLower)
             txt_score.Text = ""
@@ -67,11 +76,11 @@ Public Class CandidateList1
         If count >= ListView.Items.Count Then
             count -= 1
 
-            ListView.Items(count - 1).Selected = False
+            ListView.SelectedItems.Clear()
             ListView.Items(count).Selected = True
             ListView.Select()
         Else
-            ListView.Items(count - 1).Selected = False
+            ListView.SelectedItems.Clear()
             ListView.Items(count).Selected = True
             ListView.Select()
         End If
@@ -80,7 +89,7 @@ Public Class CandidateList1
 
         pb_main.BackgroundImage = Image.FromFile(Application.StartupPath & "\Images\" & ListView.SelectedItems(0).Text & ".jpg")
 
-        Dim score As Double = getScore(Functions.getId("SELECT id FROM t_candidate WHERE name = '" & ListView.SelectedItems(0).Text & "'"), "t_" & lbl_event.Text.ToLower)
+        Dim score As Double = Functions.getScore(Functions.getId("SELECT id FROM t_candidate WHERE name = '" & ListView.SelectedItems(0).Text & "'"), "t_" & lbl_event.Text.ToLower)
 
         ' get score if available
         If Not score = 0.0 Then
@@ -93,7 +102,7 @@ Public Class CandidateList1
         ' checks if score is inputted
         If Not txt_score.Text = "" Then
             ' save inputted score
-            Dim candidateId As Integer = Functions.getId("SELECT id FROM t_candidate WHERE name = '" & ListView.SelectedItems(0).Text & "'")
+            Dim candidateId As Integer = Functions.getId("SELECT id FROM t_candidate WHERE name = '" & ListView.Items(count).Text & "'")
 
             inputScore(txt_score.Text, candidateId, "t_" & lbl_event.Text.ToLower)
             txt_score.Text = ""
@@ -104,11 +113,11 @@ Public Class CandidateList1
         If count < 0 Then
             count += 1
 
-            ListView.Items(count + 1).Selected = False
+            ListView.SelectedItems.Clear()
             ListView.Items(count).Selected = True
             ListView.Select()
         Else
-            ListView.Items(count + 1).Selected = False
+            ListView.SelectedItems.Clear()
             ListView.Items(count).Selected = True
             ListView.Select()
         End If
@@ -117,7 +126,7 @@ Public Class CandidateList1
 
         pb_main.BackgroundImage = Image.FromFile(Application.StartupPath & "\Images\" & ListView.SelectedItems(0).Text & ".jpg")
 
-        Dim score As Double = getScore(Functions.getId("SELECT id FROM t_candidate WHERE name = '" & ListView.SelectedItems(0).Text & "'"), "t_" & lbl_event.Text.ToLower)
+        Dim score As Double = Functions.getScore(Functions.getId("SELECT id FROM t_candidate WHERE name = '" & ListView.SelectedItems(0).Text & "'"), "t_" & lbl_event.Text.ToLower)
 
         ' get score if available
         If Not score = 0.0 Then
@@ -129,30 +138,6 @@ Public Class CandidateList1
         Main.Show()
         Me.Hide()
     End Sub
-
-    Private Function getScore(ByVal candidateId As Integer, ByVal table As String) As Double
-        Dim score As Double = 0.0
-        Dim sql As String = "SELECT score FROM " & table & " WHERE candidate_id = '" & candidateId & "' AND judge_id = '" & Main.lbl_judge_id.Text & "'"
-
-        Try
-            Connect.constring.Open()
-            Functions.com.Connection = Connect.constring
-            Functions.com.CommandText = sql
-            Functions.reader = Functions.com.ExecuteReader
-
-            While reader.Read
-                If reader.HasRows Then
-                    score = Format(reader(0), "0.00")
-                End If
-            End While
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            Connect.constring.Close()
-        End Try
-
-        Return score
-    End Function
 
     Private Sub inputScore(ByVal score As String, ByVal candidateId As Integer, ByVal table As String)
         Dim sql As String

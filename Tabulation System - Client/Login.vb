@@ -42,8 +42,14 @@
             End Try
 
             Me.Hide()
-            Main.lbl_judge_id.Text = Functions.getId("SELECT id FROM t_judge WHERE username = '" & txt_username.Text & "'")
-            Main.Show()
+
+            If Functions.isEliminationEnabled() = True Then
+                CandidateList2.Show()
+            Else
+                Main.lbl_judge_id.Text = Functions.getId("SELECT id FROM t_judge WHERE username = '" & txt_username.Text & "'")
+                Main.Show()
+            End If
+
         Else
             MsgBox("User not found!")
         End If

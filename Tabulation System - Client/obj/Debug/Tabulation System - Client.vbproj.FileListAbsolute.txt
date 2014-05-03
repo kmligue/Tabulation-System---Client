@@ -12,3 +12,4 @@ E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation Sys
 E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation System - Client\obj\Debug\Tabulation_System___Client.Login.resources
 E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation System - Client\obj\Debug\Tabulation_System___Client.CandidateList1.resources
 E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation System - Client\obj\Debug\Tabulation_System___Client.ScoreList.resources
+E:\My files\Projects\Tabulation System\Tabulation System - Client\Tabulation System - Client\obj\Debug\Tabulation_System___Client.CandidateList2.resources

@@ -80,6 +80,12 @@
     <Compile Include="CandidateList1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CandidateList2.Designer.vb">
+      <DependentUpon>CandidateList2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CandidateList2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
   <ItemGroup>
     <EmbeddedResource Include="CandidateList1.resx">
       <DependentUpon>CandidateList1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CandidateList2.resx">
+      <DependentUpon>CandidateList2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
