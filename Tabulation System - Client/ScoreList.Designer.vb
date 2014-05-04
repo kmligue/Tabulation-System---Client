@@ -47,7 +47,7 @@ Partial Class ScoreList
         '
         Me.lbl_font.AutoSize = True
         Me.lbl_font.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_font.Location = New System.Drawing.Point(138, 499)
+        Me.lbl_font.Location = New System.Drawing.Point(195, 321)
         Me.lbl_font.Name = "lbl_font"
         Me.lbl_font.Size = New System.Drawing.Size(37, 20)
         Me.lbl_font.TabIndex = 1
