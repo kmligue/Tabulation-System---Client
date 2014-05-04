@@ -39,6 +39,7 @@
             CandidateList1.Show()
             Me.Hide()
         Else
+            ScoreList.populateDGV("SELECT number, image, candidate, score FROM v_gown_overall ORDER BY score DESC")
             ScoreList.Text = "Gown"
             ScoreList.Show()
         End If
@@ -52,6 +53,7 @@
             CandidateList1.Show()
             Me.Hide()
         Else
+            ScoreList.populateDGV("SELECT number, image, candidate, score FROM v_interview_overall ORDER BY score DESC")
             ScoreList.Text = "Interview"
             ScoreList.Show()
         End If
@@ -64,6 +66,7 @@
             CandidateList1.Show()
             Me.Hide()
         Else
+            ScoreList.populateDGV("SELECT number, image, candidate, score FROM v_swimwear_overall ORDER BY score DESC")
             ScoreList.Text = "Swimwear"
             ScoreList.Show()
         End If
@@ -76,6 +79,7 @@
             CandidateList1.Show()
             Me.Hide()
         Else
+            ScoreList.populateDGV("SELECT number, image, candidate, score FROM v_talent_overall ORDER BY score DESC")
             ScoreList.Text = "Talent"
             ScoreList.Show()
         End If
