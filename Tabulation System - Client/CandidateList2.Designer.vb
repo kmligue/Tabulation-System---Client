@@ -26,16 +26,17 @@ Partial Class CandidateList2
         Me.pb_main = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ImageList = New System.Windows.Forms.ImageList(Me.components)
-        Me.txt_score = New System.Windows.Forms.TextBox()
+        Me.txt_score2 = New System.Windows.Forms.TextBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.btn_next = New System.Windows.Forms.Button()
-        Me.btn_prev = New System.Windows.Forms.Button()
+        Me.btn_save = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txt_score1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ListView = New System.Windows.Forms.ListView()
+        Me.lbl_judge_id = New System.Windows.Forms.Label()
+        Me.lbl_event_id = New System.Windows.Forms.Label()
         CType(Me.pb_main, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,7 +49,7 @@ Partial Class CandidateList2
         Me.pb_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pb_main.Location = New System.Drawing.Point(359, 126)
         Me.pb_main.Name = "pb_main"
-        Me.pb_main.Size = New System.Drawing.Size(295, 389)
+        Me.pb_main.Size = New System.Drawing.Size(295, 333)
         Me.pb_main.TabIndex = 6
         Me.pb_main.TabStop = False
         '
@@ -60,68 +61,56 @@ Partial Class CandidateList2
         Me.PictureBox1.ImageLocation = ""
         Me.PictureBox1.Location = New System.Drawing.Point(355, 13)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(303, 505)
+        Me.PictureBox1.Size = New System.Drawing.Size(303, 449)
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
         'ImageList
         '
-        Me.ImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
-        Me.ImageList.ImageSize = New System.Drawing.Size(120, 200)
+        Me.ImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit
+        Me.ImageList.ImageSize = New System.Drawing.Size(120, 180)
         Me.ImageList.TransparentColor = System.Drawing.Color.Transparent
         '
-        'txt_score
+        'txt_score2
         '
-        Me.txt_score.BackColor = System.Drawing.Color.White
-        Me.txt_score.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txt_score.Font = New System.Drawing.Font("Microsoft Sans Serif", 47.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_score.Location = New System.Drawing.Point(812, 443)
-        Me.txt_score.Name = "txt_score"
-        Me.txt_score.Size = New System.Drawing.Size(100, 72)
-        Me.txt_score.TabIndex = 8
-        Me.txt_score.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_score2.BackColor = System.Drawing.Color.White
+        Me.txt_score2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txt_score2.Font = New System.Drawing.Font("Microsoft Sans Serif", 47.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_score2.Location = New System.Drawing.Point(810, 386)
+        Me.txt_score2.Name = "txt_score2"
+        Me.txt_score2.Size = New System.Drawing.Size(100, 72)
+        Me.txt_score2.TabIndex = 8
+        Me.txt_score2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'PictureBox2
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.BackgroundImage = Global.Tabulation_System___Client.My.Resources.Resources.textbox_border
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Location = New System.Drawing.Point(808, 437)
+        Me.PictureBox2.Location = New System.Drawing.Point(806, 380)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(108, 83)
         Me.PictureBox2.TabIndex = 7
         Me.PictureBox2.TabStop = False
         '
-        'btn_next
+        'btn_save
         '
-        Me.btn_next.BackgroundImage = Global.Tabulation_System___Client.My.Resources.Resources.btn_next
-        Me.btn_next.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_next.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_next.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_next.Location = New System.Drawing.Point(872, 686)
-        Me.btn_next.Name = "btn_next"
-        Me.btn_next.Size = New System.Drawing.Size(134, 48)
-        Me.btn_next.TabIndex = 9
-        Me.btn_next.UseVisualStyleBackColor = True
-        '
-        'btn_prev
-        '
-        Me.btn_prev.BackgroundImage = Global.Tabulation_System___Client.My.Resources.Resources.btn_prev
-        Me.btn_prev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_prev.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_prev.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_prev.Location = New System.Drawing.Point(703, 686)
-        Me.btn_prev.Name = "btn_prev"
-        Me.btn_prev.Size = New System.Drawing.Size(134, 48)
-        Me.btn_prev.TabIndex = 10
-        Me.btn_prev.UseVisualStyleBackColor = True
+        Me.btn_save.BackgroundImage = Global.Tabulation_System___Client.My.Resources.Resources.SAVE
+        Me.btn_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_save.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_save.Location = New System.Drawing.Point(434, 469)
+        Me.btn_save.Name = "btn_save"
+        Me.btn_save.Size = New System.Drawing.Size(134, 48)
+        Me.btn_save.TabIndex = 9
+        Me.btn_save.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(663, 358)
+        Me.Label1.Location = New System.Drawing.Point(661, 301)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(143, 46)
         Me.Label1.TabIndex = 11
@@ -132,29 +121,29 @@ Partial Class CandidateList2
         Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox3.BackgroundImage = Global.Tabulation_System___Client.My.Resources.Resources.textbox_border
         Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Location = New System.Drawing.Point(808, 336)
+        Me.PictureBox3.Location = New System.Drawing.Point(806, 279)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(108, 83)
         Me.PictureBox3.TabIndex = 7
         Me.PictureBox3.TabStop = False
         '
-        'TextBox1
+        'txt_score1
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.White
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 47.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(812, 342)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 72)
-        Me.TextBox1.TabIndex = 8
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_score1.BackColor = System.Drawing.Color.White
+        Me.txt_score1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txt_score1.Font = New System.Drawing.Font("Microsoft Sans Serif", 47.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_score1.Location = New System.Drawing.Point(810, 285)
+        Me.txt_score1.Name = "txt_score1"
+        Me.txt_score1.Size = New System.Drawing.Size(100, 72)
+        Me.txt_score1.TabIndex = 8
+        Me.txt_score1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(921, 358)
+        Me.Label2.Location = New System.Drawing.Point(919, 301)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(90, 46)
         Me.Label2.TabIndex = 11
@@ -165,7 +154,7 @@ Partial Class CandidateList2
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(922, 461)
+        Me.Label3.Location = New System.Drawing.Point(920, 404)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(90, 46)
         Me.Label3.TabIndex = 11
@@ -175,13 +164,36 @@ Partial Class CandidateList2
         '
         Me.ListView.BackgroundImage = Global.Tabulation_System___Client.My.Resources.Resources.listview_background
         Me.ListView.BackgroundImageTiled = True
+        Me.ListView.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListView.ForeColor = System.Drawing.Color.White
+        Me.ListView.FullRowSelect = True
         Me.ListView.LargeImageList = Me.ImageList
-        Me.ListView.Location = New System.Drawing.Point(12, 558)
+        Me.ListView.Location = New System.Drawing.Point(51, 526)
         Me.ListView.Name = "ListView"
-        Me.ListView.Size = New System.Drawing.Size(646, 198)
+        Me.ListView.Size = New System.Drawing.Size(920, 230)
         Me.ListView.SmallImageList = Me.ImageList
         Me.ListView.TabIndex = 12
         Me.ListView.UseCompatibleStateImageBehavior = False
+        '
+        'lbl_judge_id
+        '
+        Me.lbl_judge_id.AutoSize = True
+        Me.lbl_judge_id.Location = New System.Drawing.Point(12, 9)
+        Me.lbl_judge_id.Name = "lbl_judge_id"
+        Me.lbl_judge_id.Size = New System.Drawing.Size(44, 13)
+        Me.lbl_judge_id.TabIndex = 13
+        Me.lbl_judge_id.Text = "judge id"
+        Me.lbl_judge_id.Visible = False
+        '
+        'lbl_event_id
+        '
+        Me.lbl_event_id.AutoSize = True
+        Me.lbl_event_id.Location = New System.Drawing.Point(13, 41)
+        Me.lbl_event_id.Name = "lbl_event_id"
+        Me.lbl_event_id.Size = New System.Drawing.Size(48, 13)
+        Me.lbl_event_id.TabIndex = 14
+        Me.lbl_event_id.Text = "event_id"
+        Me.lbl_event_id.Visible = False
         '
         'CandidateList2
         '
@@ -190,15 +202,16 @@ Partial Class CandidateList2
         Me.BackgroundImage = Global.Tabulation_System___Client.My.Resources.Resources.background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1024, 768)
+        Me.Controls.Add(Me.lbl_event_id)
+        Me.Controls.Add(Me.lbl_judge_id)
         Me.Controls.Add(Me.ListView)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btn_next)
-        Me.Controls.Add(Me.btn_prev)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.btn_save)
+        Me.Controls.Add(Me.txt_score1)
         Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.txt_score)
+        Me.Controls.Add(Me.txt_score2)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.pb_main)
         Me.Controls.Add(Me.PictureBox1)
@@ -218,14 +231,15 @@ Partial Class CandidateList2
     Friend WithEvents pb_main As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents ImageList As System.Windows.Forms.ImageList
-    Friend WithEvents txt_score As System.Windows.Forms.TextBox
+    Friend WithEvents txt_score2 As System.Windows.Forms.TextBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents btn_next As System.Windows.Forms.Button
-    Friend WithEvents btn_prev As System.Windows.Forms.Button
+    Friend WithEvents btn_save As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txt_score1 As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents ListView As System.Windows.Forms.ListView
+    Friend WithEvents lbl_judge_id As System.Windows.Forms.Label
+    Friend WithEvents lbl_event_id As System.Windows.Forms.Label
 End Class

@@ -44,6 +44,8 @@
             Me.Hide()
 
             If Functions.isEliminationEnabled() = True Then
+                CandidateList2.lbl_judge_id.Text = Functions.getId("SELECT id FROM t_judge WHERE username = '" & txt_username.Text & "'")
+                CandidateList2.lbl_event_id.Text = Functions.getId("SELECT id FROM t_event WHERE name = 'Elimination'")
                 CandidateList2.Show()
             Else
                 Main.lbl_judge_id.Text = Functions.getId("SELECT id FROM t_judge WHERE username = '" & txt_username.Text & "'")

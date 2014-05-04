@@ -51,6 +51,10 @@ TabulationSystem-Client
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Tabulation_System___Client.My.Resources.Resources.SAVE">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Tabulation_System___Client.My.Resources.Resources.swimwear">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
