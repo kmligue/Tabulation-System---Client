@@ -50,9 +50,9 @@ Partial Class Main
         Me.pb_gown.BackgroundImage = Global.Tabulation_System___Client.My.Resources.Resources.gown
         Me.pb_gown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pb_gown.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_gown.Location = New System.Drawing.Point(434, 63)
+        Me.pb_gown.Location = New System.Drawing.Point(613, 91)
         Me.pb_gown.Name = "pb_gown"
-        Me.pb_gown.Size = New System.Drawing.Size(222, 326)
+        Me.pb_gown.Size = New System.Drawing.Size(276, 326)
         Me.pb_gown.TabIndex = 1
         Me.pb_gown.TabStop = False
         '
@@ -62,9 +62,9 @@ Partial Class Main
         Me.pb_interview.BackgroundImage = Global.Tabulation_System___Client.My.Resources.Resources.interview
         Me.pb_interview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pb_interview.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_interview.Location = New System.Drawing.Point(751, 63)
+        Me.pb_interview.Location = New System.Drawing.Point(930, 91)
         Me.pb_interview.Name = "pb_interview"
-        Me.pb_interview.Size = New System.Drawing.Size(222, 326)
+        Me.pb_interview.Size = New System.Drawing.Size(276, 326)
         Me.pb_interview.TabIndex = 1
         Me.pb_interview.TabStop = False
         '
@@ -74,9 +74,9 @@ Partial Class Main
         Me.pb_swimwear.BackgroundImage = Global.Tabulation_System___Client.My.Resources.Resources.swimwear
         Me.pb_swimwear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pb_swimwear.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_swimwear.Location = New System.Drawing.Point(434, 383)
+        Me.pb_swimwear.Location = New System.Drawing.Point(613, 411)
         Me.pb_swimwear.Name = "pb_swimwear"
-        Me.pb_swimwear.Size = New System.Drawing.Size(222, 326)
+        Me.pb_swimwear.Size = New System.Drawing.Size(276, 326)
         Me.pb_swimwear.TabIndex = 1
         Me.pb_swimwear.TabStop = False
         '
@@ -86,9 +86,9 @@ Partial Class Main
         Me.pb_talent.BackgroundImage = Global.Tabulation_System___Client.My.Resources.Resources.talent
         Me.pb_talent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pb_talent.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_talent.Location = New System.Drawing.Point(751, 383)
+        Me.pb_talent.Location = New System.Drawing.Point(930, 411)
         Me.pb_talent.Name = "pb_talent"
-        Me.pb_talent.Size = New System.Drawing.Size(222, 326)
+        Me.pb_talent.Size = New System.Drawing.Size(276, 326)
         Me.pb_talent.TabIndex = 1
         Me.pb_talent.TabStop = False
         '
@@ -108,7 +108,7 @@ Partial Class Main
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Tabulation_System___Client.My.Resources.Resources.background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1024, 768)
+        Me.ClientSize = New System.Drawing.Size(1366, 768)
         Me.Controls.Add(Me.lbl_event_id)
         Me.Controls.Add(Me.pb_swimwear)
         Me.Controls.Add(Me.pb_talent)
@@ -120,6 +120,7 @@ Partial Class Main
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.pb_gown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_interview, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_swimwear, System.ComponentModel.ISupportInitialize).EndInit()
